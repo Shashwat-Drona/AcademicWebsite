@@ -1,0 +1,290 @@
+.course-details {
+  padding-bottom: 4rem;
+}
+
+.course-hero {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  align-items: flex-end;
+  padding: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  /* Dark teal/green overlay + placeholder image */
+  background: linear-gradient(to top, rgba(6, 78, 59, 0.9), rgba(6, 78, 59, 0.2)), 
+              url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1600') center/cover no-repeat;
+  color: white;
+}
+
+.hero-content {
+  max-width: 800px;
+  position: relative;
+  z-index: 10;
+}
+
+.badge-accent {
+  background-color: #7f1d1d; /* Dark red */
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 2rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255,255,255,0.9);
+}
+.meta-item svg {
+  color: #34d399; /* emerald-400 */
+}
+
+/* Layout */
+.course-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 3rem;
+}
+
+/* Sections */
+h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.philosophy-card {
+  padding: 2.5rem;
+  font-size: 1.05rem;
+  color: var(--text-main);
+}
+
+.philosophy-card p {
+  margin-bottom: 1.5rem;
+}
+.philosophy-card p:last-child {
+  margin-bottom: 0;
+  color: var(--text-muted);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1.5rem;
+  margin-top: 3rem;
+}
+
+.total-hours {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.module-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.module-item {
+  padding: 1.5rem;
+  transition: all 0.2s;
+}
+
+.module-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.module-number {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.module-number.light {
+  background-color: var(--border-color);
+  color: var(--text-main);
+}
+
+.module-info {
+  flex: 1;
+}
+
+.module-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.module-info span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.module-icon {
+  color: var(--text-main);
+}
+.text-muted {
+  color: var(--text-muted);
+}
+
+.module-body {
+  margin-top: 1rem;
+  padding-left: 4.5rem;
+}
+
+.module-body ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.module-body li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Sidebar */
+.course-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.enrollment-card {
+  padding: 2.5rem;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.price-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.current-price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.old-price {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
+  font-weight: 500;
+}
+
+.enrollment-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.perks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.perks-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.text-success {
+  color: var(--success-color);
+}
+
+.master-card {
+  padding: 2.5rem;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.master-profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=100') center/cover;
+}
+
+.master-info h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.master-info span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.master-quote {
+  font-style: italic;
+  color: var(--text-main);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  border-left: 2px solid var(--border-color);
+  padding-left: 1.5rem;
+  margin: 0;
+}

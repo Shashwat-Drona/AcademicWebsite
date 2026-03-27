@@ -1,0 +1,433 @@
+.dashboard-page {
+  padding-bottom: 5rem;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.header-text {
+  max-width: 600px;
+}
+
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  display: block;
+  text-transform: uppercase;
+}
+
+.dashboard-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.dashboard-header p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.header-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  /* Complex layout handling */
+  grid-auto-rows: minmax(auto, auto);
+}
+
+.active-course-card {
+  grid-column: span 2;
+  display: flex;
+}
+
+.card-img-large {
+  width: 45%;
+  background-size: cover;
+  background-position: center;
+  padding: 1.5rem;
+}
+
+.card-img-large .badge {
+  color: var(--text-main);
+  background-color: white;
+}
+
+.active-card-content {
+  width: 55%;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.category {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.icon-save {
+  color: var(--text-main);
+}
+
+.active-card-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.active-card-content p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.progress-section {
+  margin-top: auto;
+  margin-bottom: 2rem;
+}
+
+.progress-stats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.progress-value {
+  color: var(--text-main);
+}
+
+.progress-modules {
+  color: var(--text-muted);
+}
+
+.progress-bar {
+  height: 8px;
+  background-color: var(--border-color);
+  border-radius: 4px;
+  width: 100%;
+}
+
+.progress-bar.thin {
+  height: 4px;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: var(--primary-color);
+  border-radius: 4px;
+}
+
+.active-card-content .card-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.resume-btn {
+  flex: 1;
+}
+
+.btn-icon-round {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main);
+  background: white;
+  transition: all 0.2s;
+}
+
+.btn-icon-round:hover {
+  background-color: var(--bg-main);
+}
+
+/* Velocity Card */
+.velocity-card {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.velocity-card h3 {
+  color: white;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.stat-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-info strong {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.stat-info span {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.view-analytics {
+  margin-top: auto;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  align-self: flex-start;
+}
+
+.view-analytics:hover {
+  color: white;
+}
+
+/* Small Dash Cards */
+.dash-course-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header-img {
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+  padding: 1rem;
+}
+
+.card-header-img .badge {
+  font-size: 0.65rem;
+}
+
+.dash-card-body {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.dash-card-body h3 {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.card-actions-sm {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.btn-outline {
+  border: 1px solid var(--border-color);
+  background: white;
+  padding: 0.7rem;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+  cursor: pointer;
+  color: var(--text-main);
+  text-align: center;
+}
+.btn-outline:hover {
+  border-color: var(--text-muted);
+}
+
+.btn-borderless {
+  background: var(--bg-main);
+  padding: 0.7rem;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--text-main);
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+.btn-borderless:hover {
+  background: var(--border-color);
+}
+
+.btn-icon {
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.btn-icon:hover {
+  color: var(--primary-color);
+}
+
+/* Add course card */
+.dash-add-card {
+  background-color: #F8FAF9;
+  border: 1px dashed var(--border-color);
+  box-shadow: none;
+  position: relative;
+}
+
+.dash-card-body.centralized {
+  align-items: center;
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+}
+
+.icon-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.dash-add-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.btn-float-add {
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  border: 4px solid var(--bg-main);
+  transform: translateY(-50%);
+  z-index: 10;
+  cursor: pointer;
+}
+
+/* Vertical active course (Anthropocene) */
+.vertical-span {
+  grid-column: span 2;
+}
+
+.exam-due {
+  color: #991b1b;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.stats-row {
+  display: flex;
+  gap: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.stat-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.stat-block span {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.stat-block strong {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.btn-danger {
+  background-color: #7f1d1d;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.bg-light {
+  background-color: var(--bg-main);
+  border: none;
+}
