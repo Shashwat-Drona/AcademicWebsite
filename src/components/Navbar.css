@@ -92,3 +92,172 @@
   color: white;
   background-color: var(--primary-light);
 }
+
+.profile-menu-wrapper {
+  position: relative;
+}
+
+.profile-popover {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  width: 320px;
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: 1rem;
+  z-index: 200;
+}
+
+.profile-head {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.profile-head h4 {
+  font-size: 0.95rem;
+  color: var(--text-main);
+}
+
+.profile-head p {
+  font-size: 0.8rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.profile-head span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.profile-courses h5 {
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 0.65rem;
+}
+
+.profile-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.profile-tab-btn {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-pill);
+  padding: 0.45rem 0.7rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: white;
+}
+
+.profile-tab-btn.active {
+  border-color: var(--primary-color);
+  background: var(--primary-color);
+  color: white;
+}
+
+.profile-course-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem;
+  margin-bottom: 0.5rem;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.profile-course-item:hover {
+  border-color: var(--primary-light);
+  background: #f9fbfa;
+}
+
+.profile-course-item strong {
+  font-size: 0.8rem;
+  color: var(--text-main);
+  line-height: 1.35;
+}
+
+.profile-course-item span {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.profile-course-btn {
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+  background: white;
+  cursor: pointer;
+}
+
+.profile-dna-card {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem;
+  background: #f9fbfa;
+}
+
+.profile-dna-card h5 {
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.profile-dna-card p {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 0.55rem;
+}
+
+.dna-metric {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 0.4rem;
+}
+
+.dna-metric strong {
+  color: var(--text-main);
+}
+
+.dna-bar {
+  width: 100%;
+  height: 6px;
+  background: #e5ece9;
+  border-radius: 9999px;
+  overflow: hidden;
+  margin-top: 0.2rem;
+}
+
+.dna-bar div {
+  height: 100%;
+  background: var(--primary-color);
+}
+
+.profile-dna-link {
+  margin-top: 0.75rem;
+  display: inline-flex;
+  padding: 0.45rem 0.8rem;
+  border-radius: var(--radius-pill);
+  background: var(--primary-color);
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 600;
+}

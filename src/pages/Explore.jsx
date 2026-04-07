@@ -1,81 +1,25 @@
 import { useState } from 'react';
 import { CheckSquare, Square, Star, ChevronDown, Sparkles } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { atelierCourseOrder, courseCatalog } from '../data/courses';
 import './Explore.css';
 
-const COURSES = [
-  {
-    id: 1,
-    title: 'The Ethics of Aesthetics',
-    category: 'Philosophy',
-    badge: 'PHILOSOPHY',
-    author: 'Dr. Julian Thorne',
-    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=100',
-    image: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&q=80&w=600',
-    rating: '4.9',
-    reviews: '320',
-    price: 'INR 149'
-  },
-  {
-    id: 2,
-    title: 'Gothic Engineering Masterclass',
-    category: 'Architecture',
-    badge: 'ARCHITECTURE',
-    author: 'Elena Rossi',
-    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=100',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=600',
-    rating: '4.8',
-    reviews: '185',
-    price: 'INR 199'
-  },
-  {
-    id: 3,
-    title: 'The Abstract Expressionist',
-    category: 'Modern Art',
-    badge: 'MODERN ART',
-    author: 'Marcus Vane',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=100',
-    image: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&q=80&w=600',
-    rating: '5.0',
-    reviews: '92',
-    price: 'INR 125'
-  },
-  {
-    id: 4,
-    title: 'Creative Writing: Pure Prose',
-    category: 'Literature',
-    badge: 'LITERATURE',
-    author: 'Sarah Jenkins',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=100',
-    image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&q=80&w=600',
-    rating: '4.7',
-    reviews: '455',
-    price: 'INR 89'
-  },
-  {
-    id: 5,
-    title: 'Mythology in Western Civ',
-    category: 'History',
-    badge: 'HISTORY',
-    author: 'Dr. Ariadne Vance',
-    avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=100',
-    image: 'https://images.unsplash.com/photo-1461360370896-922624d12aa1?auto=format&fit=crop&q=80&w=600',
-    rating: '4.9',
-    reviews: '612',
-    price: 'INR 175'
-  },
-  {
-    id: 6,
-    title: 'The Bio-Ethics Frontier',
-    category: 'Science',
-    badge: 'SCIENCE',
-    author: 'Simon Kaine',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100',
-    image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=600',
-    rating: '4.6',
-    reviews: '110',
-    price: 'INR 210'
-  }
-];
+const COURSES = atelierCourseOrder.map((key, index) => {
+  const course = courseCatalog[key];
+  return {
+    id: index + 1,
+    key,
+    title: course.title,
+    category: course.category,
+    badge: course.badge,
+    author: course.author,
+    avatar: course.avatar,
+    image: course.image,
+    rating: course.rating,
+    reviews: course.reviews,
+    price: course.price
+  };
+});
 
 const CATEGORIES = [
   { name: 'All Disciplines', filter: 'All', count: 6 },
@@ -90,10 +34,27 @@ const CATEGORIES = [
 
 const Explore = () => {
   const [activeFilter, setActiveFilter] = useState('All');
+  const [sortMode, setSortMode] = useState('impact');
+  const navigate = useNavigate();
+
+  const selectCourse = (courseKey, target = '/checkout') => {
+    localStorage.setItem('selectedCourseKey', courseKey);
+    navigate(target, { state: { courseKey } });
+  };
 
   const filteredCourses = activeFilter === 'All' 
     ? COURSES 
     : COURSES.filter(course => course.category === activeFilter);
+
+  const sortedCourses = [...filteredCourses].sort((a, b) => {
+    if (sortMode === 'price') {
+      const priceA = Number(a.price.replace('INR ', ''));
+      const priceB = Number(b.price.replace('INR ', ''));
+      return priceA - priceB;
+    }
+
+    return Number(b.rating) - Number(a.rating);
+  });
 
   return (
     <div className="explore-page">
@@ -107,8 +68,8 @@ const Explore = () => {
               Explore the intersection of structural engineering and social impact in our latest architectural series led by world-renowned urbanists.
             </p>
             <div className="explore-hero-actions">
-              <button className="btn-primary">Enroll in Atelier</button>
-              <button className="btn-secondary">View Curriculum</button>
+              <button className="btn-primary" onClick={() => selectCourse('gothicEngineering', '/checkout')}>Enroll in Atelier</button>
+              <button className="btn-secondary" onClick={() => selectCourse('gothicEngineering', '/curriculum/gothicEngineering')}>View Curriculum</button>
             </div>
           </div>
           
@@ -162,7 +123,7 @@ const Explore = () => {
               <Sparkles className="promo-icon" size={24}/>
               <h4>Alumni Access</h4>
               <p>Unlock the full historical archive and private discussions.</p>
-              <button className="btn-promo full-width">UPGRADE</button>
+              <button className="btn-promo full-width" onClick={() => selectCourse(sortedCourses[0]?.key || 'ethicsAesthetics', '/checkout')}>UPGRADE</button>
             </div>
           </aside>
 
@@ -172,14 +133,16 @@ const Explore = () => {
               <h2>{activeFilter === 'All' ? 'Explore Curriculum' : `${activeFilter} Curriculum`}</h2>
               <div className="sort-by">
                 <span>Sort by:</span>
-                <button className="sort-btn">Scholarly Impact <ChevronDown size={14}/></button>
+                <button className="sort-btn" onClick={() => setSortMode((prev) => (prev === 'impact' ? 'price' : 'impact'))}>
+                  {sortMode === 'impact' ? 'Scholarly Impact' : 'Price (Low to High)'} <ChevronDown size={14}/>
+                </button>
               </div>
             </div>
 
             <div className="courses-grid" style={{ minHeight: '400px', alignContent: 'start' }}>
-              {filteredCourses.length > 0 ? (
-                filteredCourses.map(course => (
-                  <div key={course.id} className="card course-card">
+              {sortedCourses.length > 0 ? (
+                sortedCourses.map(course => (
+                  <div key={course.id} className="card course-card" onClick={() => selectCourse(course.key, '/checkout')} style={{ cursor: 'pointer' }}>
                     <div className="card-img" style={{backgroundImage: `url('${course.image}')`}}>
                       <span className="badge badge-light">{course.badge}</span>
                     </div>
@@ -208,7 +171,7 @@ const Explore = () => {
             </div>
 
             <div className="load-more">
-               <button className="btn-secondary">LOAD MORE ARCHIVES <ChevronDown size={16}/></button>
+          <button className="btn-secondary" onClick={() => selectCourse(sortedCourses[0]?.key || 'ethicsAesthetics', '/checkout')}>CONTINUE TO ENROLLMENT <ChevronDown size={16}/></button>
             </div>
           </main>
         </div>

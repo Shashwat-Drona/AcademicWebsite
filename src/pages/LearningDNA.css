@@ -1,0 +1,268 @@
+.dna-page {
+  padding: 3rem 0 5rem;
+}
+
+.dna-header {
+  max-width: 760px;
+  margin-bottom: 2rem;
+}
+
+.dna-header h1 {
+  font-size: 2.4rem;
+  margin-bottom: 0.8rem;
+  letter-spacing: -0.02em;
+}
+
+.dna-header p {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.dna-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 1.5rem;
+}
+
+.dna-main-card {
+  padding: 2rem;
+}
+
+.dna-main-card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.dna-identity {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.identity-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.identity-pill {
+  padding: 0.45rem 0.8rem;
+  border-radius: var(--radius-pill);
+  background: rgba(5, 61, 47, 0.08);
+  color: var(--primary-color);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.dna-subtext {
+  color: var(--text-muted);
+  margin-bottom: 1.6rem;
+}
+
+.dna-identity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.dna-identity-grid div {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem;
+  background: #f9fbfa;
+}
+
+.dna-identity-grid span {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.dna-identity-grid strong {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.84rem;
+  color: var(--text-main);
+}
+
+.dna-stat-block {
+  padding: 1rem 0;
+  border-top: 1px solid var(--border-color);
+}
+
+.dna-stat-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.45rem;
+}
+
+.dna-stat-head strong {
+  font-size: 0.95rem;
+}
+
+.dna-stat-head span {
+  font-size: 0.85rem;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.dna-progress {
+  height: 7px;
+  background: #e7ecea;
+  border-radius: 9999px;
+  overflow: hidden;
+  margin-bottom: 0.55rem;
+}
+
+.dna-progress div {
+  height: 100%;
+  background: var(--primary-color);
+}
+
+.dna-stat-block p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.dna-section-block {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.dna-section-block h3 {
+  font-size: 0.86rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.65rem;
+}
+
+.usp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.7rem;
+}
+
+.usp-card {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem;
+  background: white;
+}
+
+.usp-card span {
+  font-size: 0.66rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.usp-card strong {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 1rem;
+  color: var(--primary-color);
+}
+
+.usp-card p {
+  margin-top: 0.35rem;
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.dna-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.dna-list li {
+  font-size: 0.84rem;
+  color: var(--text-main);
+  background: #f7faf8;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.75rem;
+  line-height: 1.45;
+}
+
+.dna-summary-card {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.summary-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.dna-score {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  line-height: 1;
+}
+
+.dna-summary-card p {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.ritual-box {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: #f8fbfa;
+  padding: 0.75rem;
+}
+
+.ritual-box h4 {
+  font-size: 0.74rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.45rem;
+}
+
+.ritual-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  border-top: 1px dashed var(--border-color);
+  padding: 0.45rem 0;
+}
+
+.ritual-item:first-of-type {
+  border-top: none;
+}
+
+.ritual-item strong {
+  font-size: 0.76rem;
+  color: var(--text-main);
+}
+
+.ritual-item span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.dna-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: auto;
+}

@@ -1,7 +1,18 @@
+import { useState } from 'react';
 import { CreditCard, Landmark, Wallet, ShieldCheck, Clock } from 'lucide-react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { getCourseByKey } from '../data/courses';
 import './Checkout.css';
 
 const Checkout = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [paymentMethod, setPaymentMethod] = useState('card');
+  const selectedCourseKey = location.state?.courseKey || localStorage.getItem('selectedCourseKey') || 'ethicsAesthetics';
+  const selectedCourse = getCourseByKey(selectedCourseKey);
+
+  localStorage.setItem('selectedCourseKey', selectedCourse.key);
+
   return (
     <div className="checkout-page">
       <div className="container">
@@ -11,6 +22,7 @@ const Checkout = () => {
           <span className="section-label">ENROLLMENT PROCESS</span>
           <h1>Complete Your Application</h1>
           <p>You are moments away from joining a community dedicated to the mastery of architectural thought and morphology.</p>
+          <button className="btn-secondary" onClick={() => navigate('/explore')}>Back to Explore</button>
         </header>
 
         <div className="checkout-layout">
@@ -49,15 +61,15 @@ const Checkout = () => {
               </div>
               
               <div className="payment-methods">
-                <button className="method-box active">
+                <button className={`method-box ${paymentMethod === 'card' ? 'active' : ''}`} onClick={() => setPaymentMethod('card')}>
                   <CreditCard size={24} className="method-icon" />
                   <span>Credit Card</span>
                 </button>
-                <button className="method-box">
+                <button className={`method-box ${paymentMethod === 'bank' ? 'active' : ''}`} onClick={() => setPaymentMethod('bank')}>
                   <Landmark size={24} className="method-icon" />
                   <span>Bank Transfer</span>
                 </button>
-                <button className="method-box">
+                <button className={`method-box ${paymentMethod === 'scholarship' ? 'active' : ''}`} onClick={() => setPaymentMethod('scholarship')}>
                   <Wallet size={24} className="method-icon" />
                   <span>Scholarship</span>
                 </button>
@@ -88,28 +100,28 @@ const Checkout = () => {
           {/* Sidebar Summary */}
           <aside className="checkout-sidebar">
             <div className="card summary-card">
-               <div className="summary-img" style={{backgroundImage: "url('https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?auto=format&fit=crop&q=80&w=600')"}}></div>
+               <div className="summary-img" style={{backgroundImage: `url('${selectedCourse.image}')`}}></div>
                
                <div className="summary-details">
-                 <h3>Advanced Architectural Morphology</h3>
-                 <span className="time-meta"><Clock size={14}/> 12 Week Intensive</span>
+                 <h3>{selectedCourse.title}</h3>
+                 <span className="time-meta"><Clock size={14}/> {selectedCourse.duration}</span>
                  
                  <div className="cost-breakdown">
                    <div className="cost-row">
                      <span>Tuition Fee</span>
-                     <strong>INR 2,450.00</strong>
+                     <strong>{selectedCourse.tuitionFee}</strong>
                    </div>
                    <div className="cost-row">
                      <span>Material Access</span>
-                     <strong>INR 120.00</strong>
+                     <strong>{selectedCourse.materialFee}</strong>
                    </div>
                    <div className="cost-row total-row">
                      <span>Total Due</span>
-                     <strong>INR 2,570.00</strong>
+                     <strong>{selectedCourse.totalFee}</strong>
                    </div>
                  </div>
 
-                 <button className="btn-primary full-width mt-4">Confirm Enrollment</button>
+                 <button className="btn-primary full-width mt-4" onClick={() => navigate(`/curriculum/${selectedCourse.key}`, { state: { courseKey: selectedCourse.key } })}>Proceed to Curriculum</button>
                  
                  <p className="terms-text">By clicking "Confirm Enrollment", you agree to Academic Atelier's Terms of Study and Privacy Protocol.</p>
                </div>
