@@ -107,8 +107,8 @@ const CourseDetails = () => {
               <div className="enrollment-header">
                 <span className="label">ENROLLMENT FEE</span>
                 <div className="price-wrap">
-                  <span className="current-price">$1,250</span>
-                  <span className="old-price">$1,800</span>
+                  <span className="current-price">INR 1,250</span>
+                  <span className="old-price">INR 1,800</span>
                 </div>
               </div>
 

@@ -13,7 +13,7 @@ const COURSES = [
     image: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&q=80&w=600',
     rating: '4.9',
     reviews: '320',
-    price: '$149'
+    price: 'INR 149'
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ const COURSES = [
     image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=600',
     rating: '4.8',
     reviews: '185',
-    price: '$199'
+    price: 'INR 199'
   },
   {
     id: 3,
@@ -37,7 +37,7 @@ const COURSES = [
     image: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&q=80&w=600',
     rating: '5.0',
     reviews: '92',
-    price: '$125'
+    price: 'INR 125'
   },
   {
     id: 4,
@@ -49,7 +49,7 @@ const COURSES = [
     image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&q=80&w=600',
     rating: '4.7',
     reviews: '455',
-    price: '$89'
+    price: 'INR 89'
   },
   {
     id: 5,
@@ -61,7 +61,7 @@ const COURSES = [
     image: 'https://images.unsplash.com/photo-1461360370896-922624d12aa1?auto=format&fit=crop&q=80&w=600',
     rating: '4.9',
     reviews: '612',
-    price: '$175'
+    price: 'INR 175'
   },
   {
     id: 6,
@@ -73,7 +73,7 @@ const COURSES = [
     image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=600',
     rating: '4.6',
     reviews: '110',
-    price: '$210'
+    price: 'INR 210'
   }
 ];
 

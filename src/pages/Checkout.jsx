@@ -97,15 +97,15 @@ const Checkout = () => {
                  <div className="cost-breakdown">
                    <div className="cost-row">
                      <span>Tuition Fee</span>
-                     <strong>$2,450.00</strong>
+                     <strong>INR 2,450.00</strong>
                    </div>
                    <div className="cost-row">
                      <span>Material Access</span>
-                     <strong>$120.00</strong>
+                     <strong>INR 120.00</strong>
                    </div>
                    <div className="cost-row total-row">
                      <span>Total Due</span>
-                     <strong>$2,570.00</strong>
+                     <strong>INR 2,570.00</strong>
                    </div>
                  </div>
 
